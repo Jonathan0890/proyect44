@@ -4,11 +4,11 @@ import Sidebar from '../components/Sidebar';
 import axios from 'axios';
 import '../css/Dashboard.css';
 import Formul from '../components/Formul';
-import { useNavigate } from 'react-router-dom';
+
 
 
 export default function Dashboard() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const [Users, setUsers] = useState([]);
     useEffect(() => {

@@ -25,8 +25,8 @@ export default function EditUser() {
             console.log(response);
             SetUser({
                 
-                Username: response.data.username,
-                Password: response.data.password
+                username: response.data.username,
+                password: response.data.password
             })
         };
         loadUser(); //Ejecutar el método buscar usuario
@@ -63,13 +63,13 @@ export default function EditUser() {
                             <div className="flex flex-wrap -mx-3 mb-6">
                                 <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                                        Username
+                                        username
                                     </label>
                                     <input
                                         className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                         type="text"
                                         placeholder=""
-                                        name="Username"  // Nombre corresponde al campo "Nombre" en initialValues
+                                        name="username"  // Nombre corresponde al campo "Nombre" en initialValues
                                         onChange={handleChange}
                                         value={values.username}
                                     />
@@ -80,13 +80,13 @@ export default function EditUser() {
                             <div className="flex flex-wrap -mx-3 mb-6">
                                 <div className="w-full px-3">
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                                        Contraseña
+                                        contraseña
                                     </label>
                                     <input
                                         className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                         type="password"
                                         placeholder=""
-                                        name="Password"  // Corregir el atributo name a "Username"
+                                        name="password"  // Corregir el atributo name a "Username"
                                         onChange={handleChange}
                                         value={values.password}
                                     />
