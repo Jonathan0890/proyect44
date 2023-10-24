@@ -1,116 +1,75 @@
-import React, {useState} from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
 import './../css/Formulario.css';
+import React from "react";
+import { useState, useEffect } from 'react';
+import axios from "axios";
+import { Formik } from "formik";
 
-const Formul = () => {
-	const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
+export default function Formul() {
 	return (
-		<>
+		<div>
 			<Formik
 				initialValues={{
-					nombre: '',
-					correo: ''
+					username: "",
+					password: "",
 				}}
-				validate={(valores) => {
-					let errores = {};
+				onSubmit={async (values, actions) => {
+					console.log(values);
 
-					// Validacion nombre
-					if(!valores.nombre){
-						errores.nombre = 'Por favor ingresa un nombre'
-					} else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)){
-						errores.nombre = 'El nombre solo puede contener letras y espacios'
+					try {
+						// Cambia la URL a la que deseas enviar los datos
+						const res = await axios.post('http://localhost:3000/users', values);
+						console.log(res.data); // Puedes mostrar la respuesta en la consola
+
+						actions.resetForm();
+						alert('Datos agregados correctamente');
+						// Evita usar window.location para redireccionar, usa el enrutamiento de React en su lugar
+						// Tu aplicación debe estar configurada para manejar el enrutamiento.
+					} catch (error) {
+						console.error(error);
 					}
-
-					// Validacion correo
-					if(!valores.correo){
-						errores.correo = 'Por favor ingresa un correo electronico'
-					} else if(!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.correo)){
-						errores.correo = 'El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.'
-					}
-
-					return errores;
-				}}
-				onSubmit={(valores, {resetForm}) => {
-					resetForm();
-					console.log('Formulario enviado');
-					cambiarFormularioEnviado(true);
-					setTimeout(() => cambiarFormularioEnviado(false), 5000);
 				}}
 			>
-				{( {errors} ) => (
-					<Form className="formulario">
-						<div>
-							<label htmlFor="nombre">Nombre</label>
-							<Field
-								type="text" 
-								id="nombre" 
-								name="nombre" 
-								placeholder="John Doe"
-							/>
-							<ErrorMessage name="nombre" component={() => (<div className="error">{errors.nombre}</div>)} />
+				{({ handleChange, handleSubmit, values }) => (
+					<form className="w-full max-w-lg" onSubmit={handleSubmit}>
+						<div className="flex flex-wrap -mx-3 mb-6">
+							<div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+								<label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+									Username
+								</label>
+								<input
+									className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+									id="grid-username"
+									type="text"
+									placeholder=""
+									name="username" // Cambia a minúsculas para que coincida con initialValues
+									onChange={handleChange}
+									value={values.username}
+								/>
+							</div>
 						</div>
-						<div>
-							<label htmlFor="correo">Correo</label>
-							<Field
-								type="text" 
-								id="correo" 
-								name="correo" 
-								placeholder="correo@correo.com" 
-							/>
-							<ErrorMessage name="correo" component={() => (<div className="error">{errors.correo}</div>)} />
+						<div className="flex flex-wrap -mx-3 mb-6">
+							<div className="w-full px-3">
+								<label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+									Contraseña
+								</label>
+								<input
+									className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+									id="grid-password"
+									type="password"
+									placeholder=""
+									name="password" // Cambia a minúsculas para que coincida con initialValues
+									onChange={handleChange}
+									value={values.password}
+								/>
+							</div>
 						</div>
-
-						<div>
-							<label>
-								<Field type="radio" name="sexo" value="hombre" /> Hombre
-							</label>
-							<label>
-								<Field type="radio" name="sexo" value="mujer" /> Mujer
-							</label>
-						</div>
-
-						<button type="submit">Enviar</button>
-						{formularioEnviado && <p className="exito">Formulario enviado con exito!</p>}
-					</Form>
-				)}
-
-
-				{/* {( {values, errors, touched, handleSubmit, handleChange, handleBlur} ) => (
-					<form className="formulario" onSubmit={handleSubmit}>
-						<div>
-							<label htmlFor="nombre">Nombre</label>
-							<input 
-								type="text" 
-								id="nombre" 
-								name="nombre" 
-								placeholder="John Doe" 
-								value={values.nombre}
-								onChange={handleChange}
-								onBlur={handleBlur}
-							/>
-
-							{touched.nombre && errors.nombre && <div className="error">{errors.nombre}</div>}
-						</div>
-						<div>
-							<label htmlFor="correo">Correo</label>
-							<input 
-								type="text" 
-								id="correo" 
-								name="correo" 
-								placeholder="correo@correo.com" 
-								value={values.correo}
-								onChange={handleChange}
-								onBlur={handleBlur}
-							/>
-							{touched.correo && errors.correo && <div className="error">{errors.correo}</div>}
-						</div>
-						<button type="submit">Enviar</button>
-						{formularioEnviado && <p className="exito">Formulario enviado con exito!</p>}
+						<br />
+						<button className="bg-transparent hover:bg-gray-400 text-gray-700 font-semibold hover:text-white py-0 px-4 border border-gray-700 hover:border-transparent rounded" type="submit">
+							Agregar
+						</button>
 					</form>
-				)} */}
+				)}
 			</Formik>
-		</>
+		</div>
 	);
 }
- 
-export default Formul;

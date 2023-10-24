@@ -1,32 +1,21 @@
 import React from 'react';
-import '../css/Formulario.css';
-import { Link } from 'react-router-dom';
+import '../css/Login.css';
 
 function Login() {
-    return (
-        <div className="login-box">
-            <form>
-                <div className="input-group">
-                    <label htmlFor="titulo">Iniciar Sesión</label>
-                    <label htmlFor="usuario">Usuario</label>
-                    <input type="text" id="usuario" name="usuario" placeholder="Usuario" required />
-                </div>
-                <div className="input-group">
-                    <label htmlFor="contrasena">Contraseña</label>
-                    <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required />
-                </div>
-                <button type="submit">Iniciar Sesión</button>
-                <div className="registration">
-                    <Link to="/Registro">¿Has olivado la contraseña?</Link>
-                    <Link to="">¿No tienes una cuenta?</Link>
-                </div>
-                <div className="social-login">
-
-                    <button type="button" className="google-button">Google</button>
-                </div>
-            </form>
-
+    return (<>
+        <div className="bg-yellow-400 text-black font-bold flex flex-col w-fit h-fit p-2 m-4 gap-6 items-center">
+            <label>Inicia sesión</label>
+            <div className="flex flex-row ">
+                <label className="">Usuario:</label>
+                <input className="bg-white w-[10rem] h-8" />
+            </div>
+            <div className="flex flex-row">
+                <label>Contraseña:</label>
+                <input className="bg-white w-[10rem] h-8" />
+            </div>
+            <button className="w-fit h-fit">Inicia sesión</button>
         </div>
+        </>
     );
 }
 

@@ -12,6 +12,7 @@ import Registro from "../components/Registro";
 import Resena from "../pages/Resena";
 import History from "../pages/History";
 import Favoritos from "../pages/Favoritos";
+import EditUser from "../pages/Pages-Dash/EditDash";
 
 
 export const routes = createBrowserRouter([
@@ -66,5 +67,9 @@ export const routes = createBrowserRouter([
     {
         path:'/favoritos',
         element: <Favoritos/>
+    },
+    {
+        path:'/EditDash/:id',
+        element: <EditUser/>
     }
 ]);
