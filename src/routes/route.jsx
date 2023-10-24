@@ -5,9 +5,13 @@ import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import Home from "../pages/Home";
 import Dashboard from "../components/Dashboard";
-import Formul from "../pages/Formul"
+import Formul from "../components/Formul";
 import Body from "../Body";
 import Nosotros from "../pages/Nosotros";
+import Registro from "../components/Registro";
+import Resena from "../pages/Resena";
+import History from "../pages/History";
+import Favoritos from "../pages/Favoritos";
 
 
 export const routes = createBrowserRouter([
@@ -46,5 +50,21 @@ export const routes = createBrowserRouter([
     {
         path:'/nosotros',
         element: <Nosotros/>
+    },
+    {
+        path:'/registro',
+        element: <Registro/>
+    },
+    {
+        path:'/resena',
+        element: <Resena/>
+    },
+    {
+        path:'/history',
+        element: <History/>
+    },
+    {
+        path:'/favoritos',
+        element: <Favoritos/>
     }
 ]);

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import './../css/Formulario.css';
 
-const Formulario = () => {
+const Formul = () => {
 	const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
 	return (
 		<>
@@ -113,4 +113,4 @@ const Formulario = () => {
 	);
 }
  
-export default Formulario;
+export default Formul;

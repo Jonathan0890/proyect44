@@ -1,10 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
+import FacebookLogin from 'react-facebook-login';
+import './css/Google.css'
 
 function App() {
-    const [ user, setUser ] = useState([]);
-    const [ profile, setProfile ] = useState([]);
+    const [user, setUser] = useState([]);
+    const [profile, setProfile] = useState([]);
+
+
+    const responseFacebook = (response) => {
+        console.log(response);
+    }
+    const componentClicked = () => {
+        alert('Evento onClick')
+    }
+
+
+
 
     const login = useGoogleLogin({
         onSuccess: (codeResponse) => setUser(codeResponse),
@@ -27,7 +40,7 @@ function App() {
                     .catch((err) => console.log(err));
             }
         },
-        [ user ]
+        [user]
     );
 
     // log out function to log the user out of google and set the profile array to null
@@ -36,13 +49,13 @@ function App() {
         setProfile(null);
     };
 
-    return (
-        <div>
+    return (<>
+        <div className='container'>
             <h2>React Google Login</h2>
             <br />
             <br />
             {profile ? (
-                <div>
+                <div className='Perfil-google'>
                     <img src={profile.picture} alt="user image" />
                     <h3>User Logged in</h3>
                     <p>Name: {profile.name}</p>
@@ -52,9 +65,23 @@ function App() {
                     <button onClick={logOut}>Log out</button>
                 </div>
             ) : (
-                <button onClick={() => login()}>Sign in with Google 🚀 </button>
+                <button className='button-google' onClick={() => login()}>Sign in with Google 🚀 </button>
             )}
         </div>
+
+        <div className='container-face'>
+            <FacebookLogin 
+                appId="7191455840899456"
+                autoLoad={true}
+                callback={responseFacebook}
+                fields="name,email,picture"
+                cssClass="my-facebook-button-class"
+                icon="fa-facebook"
+            />
+
+        </div>
+
+    </>
     );
 }
 export default App;

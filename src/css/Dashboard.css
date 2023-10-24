@@ -1,95 +1,98 @@
-/* Estilos para la clase .p-4 */
-.p-4 {
-  padding: 1rem;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  min-height: 100vh;
 }
 
-/* Estilos para la clase .sm:ml-50 */
-.sm\:ml-50 {
-  margin-left: 12.5rem; /* Ajusta el valor según tus necesidades */
+.lg\:col-span-3 {
+  grid-column: span 3;
 }
 
-/* Estilos para la clase .p-20 */
-.p-20 {
-  padding: 5rem;
+.xl\:col-span-5 {
+  grid-column: span 5;
 }
 
-/* Estilos para la clase .border-dashed */
-.border-dashed {
-  border-style: dashed;
-  border-width: 1px;
+.bg-gray-100 {
+  background-color: #f3f4f6;
 }
 
-/* Estilos para la clase .flex */
-.flex {
-  display: flex;
+.p-8 {
+  padding: 2rem;
 }
 
-/* Estilos para la clase .items-center */
-.items-center {
-  align-items: center;
+.h {
+  height: 100vh;
 }
 
-/* Estilos para la clase .justify-center */
-.justify-center {
-  justify-content: center;
+.overflow-y-scroll {
+  overflow-y: scroll;
 }
 
-/* Estilos para la clase .rounded */
-.rounded {
-  border-radius: 0.25rem; /* Ajusta el valor según tus necesidades */
+/* Resto de los estilos para la sección interior */
+/* ... */
+
+/* A continuación, algunos ejemplos de estilos para ciertas clases Tailwind */
+
+/* Ejemplo de clase 'px-6' */
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
-/* Estilos para la clase .container */
+/* Ejemplo de clase 'py-4' */
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Puedes seguir el mismo patrón para otras clases de Tailwind. */
+/* Recuerda que algunos estilos pueden requerir estilos adicionales en CSS para coincidir exactamente con Tailwind. */
+
+/* Ejemplo de clase 'font-medium' */
+.font-medium {
+  font-weight: 500;
+}
+
+/* Ejemplo de clase 'text-gray-900' */
+.text-gray-900 {
+  color: #111827;
+}
+
+/* ... */
+/* Agrega estos estilos al elemento contenedor de la tabla */
+
+/* Para centrar horizontalmente */
 .container {
-  max-width: 100%; /* Ajusta el valor según tus necesidades */
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-/* Estilos para la clase .relative */
-.relative {
-  position: relative;
+/* Para centrar verticalmente */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-/* Estilos para la tabla */
+/* Estilos adicionales para la tabla */
 table {
-  width: 100%;
-  font-size: 0.875rem; /* Ajusta el valor según tus necesidades */
+  width: 100%; /* Opcional: hacer que la tabla ocupe el ancho del contenedor */
+  max-width: 100%; /* Opcional: establecer un ancho máximo para la tabla */
   text-align: left;
-  color: #666; /* Ajusta el color según tus necesidades */
 }
-
-/* Estilos para la cabecera de la tabla */
-table thead {
-  font-size: 0.75rem; /* Ajusta el valor según tus necesidades */
-  background-color: #333; /* Ajusta el color según tus necesidades */
-  color: #eee; /* Ajusta el color según tus necesidades */
-}
-
-/* Estilos para las celdas de la tabla */
-table td {
-  padding: 0.75rem; /* Ajusta el valor según tus necesidades */
-}
-
-/* Estilos para los enlaces */
-a {
-  text-decoration: none;
-  color: #007bff; /* Ajusta el color según tus necesidades */
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Estilos para los botones */
-button {
-  cursor: pointer;
-  text-decoration: none;
-  color: #007bff; /* Ajusta el color según tus necesidades */
-}
-
-button:hover {
-  text-decoration: underline;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinea la tabla en la parte superior */
+  align-items: center;
+  height: 100%;
 }
