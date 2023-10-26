@@ -2,10 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import axios from 'axios';
-import '../css/Dashboard.css';
 import Formul from '../components/Formul';
-
-
 
 export default function Dashboard() {
     const navigate = useNavigate();
@@ -24,90 +21,81 @@ export default function Dashboard() {
         }
     }
 
-    const HandeDelte = async (id) => {
+    const HandleDelete = async (id) => {
         const response = await axios.delete(`http://localhost:3000/users/${id}`);
 
-        if (response.status == 200) {
-            alert("Se borro correctamente")
+        if (response.status === 200) {
+            alert("Se borró correctamente");
         } else {
-            alert("Succedio un error")
+            alert("Sucedio un error");
         }
-        fetchUsers()
+        fetchUsers();
     }
 
     return (
-        
-        <div className='grid lg:grid-cols-4 xl:grid-cols-6 min-h-screen'>
-            
+        <div className="grid lg:grid-cols-4 xl:grid-cols-6 min-h-screen">
             <Sidebar />
-            <main className="lg:col-span-3 xl:col-span-5 bg-gray-00 p-8 h-[100vh] overflow-y-scroll">
+            <main className="lg:col-span-3 xl:col-span-5 bg-gray-100 p-8 h-screen overflow-y-scroll">
                 <br />
-                <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
-
+                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                    {/* Contenido de la sección */}
                 </section>
                 <Formul />
-                <div class="p-4 sm:ml-50">
-                    <div class="p-20 border-dashed">
-
-                        <div class="flex items-center justify-center h-48 mb-4 rounded">
-                            <div class="container">
-                                <div class="relative  left-70 top-24">
-                                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                                        <thead class="text-xs text-gray-900 uppercase dark:bg-gray-700 dark:text-gray-400">
+                <div className="p-4 sm:ml-50">
+                    <div className="p-20 border-dashed">
+                        <div className="flex items-center justify-center h-48 mb-4 rounded">
+                            <div className="container">
+                                <div className="relative left-70 top-24">
+                                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                        <thead className="text-xs text-gray-900 uppercase dark:bg-gray-700 dark:text-gray-400">
                                             <tr>
-                                                <th scope="col" class="px-6 py-3">
+                                                <th scope="col" className="px-6 py-3">
                                                     #
                                                 </th>
-                                                <th scope="col" class="px-6 py-3">
+                                                <th scope="col" className="px-6 py-3">
                                                     Username
                                                 </th>
-                                                <th scope="col" class="px-6 py-3">
+                                                <th scope="col" className="px-6 py-3">
                                                     Contraseña
                                                 </th>
-                                                <th scope="col" class="px-6 py-3">
+                                                <th scope="col" className="px-6 py-3">
                                                     Fecha de registro
                                                 </th>
-                                                <th scope="col" class="px-6 py-3">
+                                                <th scope="col" className="px-6 py-3">
                                                     Acción
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {Users.map((users, i) => (
-                                                <tr className='border-b dark:border-gray-700' key={i}>
-                                                    <th scope='row' className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap'>
-                                                        {users.id}
+                                            {Users.map((user, i) => (
+                                                <tr className="border-b dark:border-gray-700" key={i}>
+                                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                                        {user.id}
                                                     </th>
-                                                    <td class="px-6 py-4">
-                                                        {users.username}
+                                                    <td className="px-6 py-4">
+                                                        {user.username}
                                                     </td>
-                                                    <td class="px-6 py-4">
-                                                        {users.password}
+                                                    <td className="px-6 py-4">
+                                                        {user.password}
                                                     </td>
-                                                    <td class="px-6 py-4">
-                                                        {users.createdAt}
+                                                    <td className="px-6 py-4">
+                                                        {user.createdAt}
                                                     </td>
-                                                    <td class="px-6 py-4">
-                                                    <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={()=> navigate(`/EditDash/${users.id}`)}> Editar</a>
+                                                    <td className="px-6 py-4">
+                                                        <a className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => navigate(`/EditDash/${user.id}`)}>Editar</a>
                                                         {"      "}
-                                                        <a className="btn btn-danger mr-auto font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => HandeDelte(users.id)}>Eliminar</a>
-
+                                                        <a className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => HandleDelete(user.id)}>Eliminar</a>
                                                     </td>
                                                 </tr>
-
                                             ))}
                                         </tbody>
                                     </table>
                                 </div>
-
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </main>
-
         </div>
     );
 }

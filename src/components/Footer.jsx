@@ -1,74 +1,81 @@
 import React from 'react';
-import './../css/Footer.css'
 
 function Footer() {
   return (
-    <footer className="footer">
-      <div className="sb__footer section__padding">
-        <div className="sb__footer-links">
-          <div className="sb__footer-links_div">
-            <h4>Employer</h4>
-            <a href="#">
-              <p>Link 1</p>
+    <footer className="bg-gray-900">
+      <div className="sb__footer p-16">
+        <div className="sb__footer-links flex justify-between items-start flex-row flex-wrap w-full text-left mb-8">
+          <div className="w-36 mb-4 flex flex-col text-white">
+            <h4 className="text-sm leading-4 my-2 cursor-pointer">Employer</h4>
+            <a href="#" className="text-gray-300 no-underline">
+              <p className="text-xs leading-4 my-2 cursor-pointer">Link 1</p>
             </a>
-            <a href="#">
-              <p>Link 2</p>
+            <a href="#" className="text-gray-300 no-underline">
+              <p className="text-xs leading-4 my-2 cursor-pointer">Link 2</p>
             </a>
-            <a href="#">
-              <p>Link 3</p>
-            </a>
-          </div>
-          <div className="sb__footer-links_div">
-            <h4>Resource</h4>
-            <a href="#">
-              <p>Link 4</p>
-            </a>
-            <a href="#">
-              <p>Link 5</p>
-            </a>
-            <a href="#">
-              <p>Link 6</p>
+            <a href="#" className="text-gray-300 no-underline">
+              <p className="text-xs leading-4 my-2 cursor-pointer">Link 3</p>
             </a>
           </div>
-          <div className="sb__footer-links_div">
-            <h4>Privacy Policy</h4>
-            <a href="#">
-              <p>Link 7</p>
+          <div className="w-36 mb-4 flex flex-col text-white">
+            <h4 className="text-sm leading-4 my-2 cursor-pointer">Resource</h4>
+            <a href="#" className="text-gray-300 no-underline">
+              <p className="text-xs leading-4 my-2 cursor-pointer">Link 4</p>
             </a>
-            <a href="#">
-              <p>Link 8</p>
+            <a href="#" className="text-gray-300 no-underline">
+              <p className="text-xs leading-4 my-2 cursor-pointer">Link 5</p>
             </a>
-            <a href="#">
-              <p>Link 9</p>
-            </a>
-          </div>
-          <div className="sb__footer-links_div">
-            <h4>Terms & Conditions</h4>
-            <a href="#">
-              <p>Link 10</p>
-            </a>
-            <a href="#">
-              <p>Link 11</p>
-            </a>
-            <a href="#">
-              <p>Link 12</p>
+            <a href="#" className="text-gray-300 no-underline">
+              <p className="text-xs leading-4 my-2 cursor-pointer">Link 6</p>
             </a>
           </div>
-          <div className="sb__footer-links_div">
-            <h4>Coming Soon</h4>
-            <p>Content for 'Coming Soon' section</p>
+          <div className="w-36 mb-4 flex flex-col text-white">
+            <h4 className="text-sm leading-4 my-2 cursor-pointer">Privacy Policy</h4>
+            <a href="#" className="text-gray-300 no-underline">
+              <p className="text-xs leading-4 my-2 cursor-pointer">Link 7</p>
+            </a>
+            <a href="#" className="text-gray-300 no-underline">
+              <p className="text-xs leading-4 my-2 cursor-pointer">Link 8</p>
+            </a>
+            <a href="#" className="text-gray-300 no-underline">
+              <p className="text-xs leading-4 my-2 cursor-pointer">Link 9</p>
+            </a>
           </div>
-          <hr />
-          <div className="sb__footer-links_below">
-            <div className="sb__footer-copyright">
-              <p>Copyright © 2023. All rights reserved</p>
-            </div>
-            <div className="sb__footer-below-links">
-              <a href="#"><p>Privacy</p></a>
-              <a href="#"><p>Terms & Conditions</p></a>
-              <a href="#"><p>Security</p></a>
-              <a href="#"><p>Cookie Declaration</p></a>
-            </div>
+          <div className="w-36 mb-4 flex flex-col text-white">
+            <h4 className="text-sm leading-4 my-2 cursor-pointer">Terms & Conditions</h4>
+            <a href="#" className="text-gray-300 no-underline">
+              <p className="text-xs leading-4 my-2 cursor-pointer">Link 10</p>
+            </a>
+            <a href="#" className="text-gray-300 no-underline">
+              <p className="text-xs leading-4 my-2 cursor-pointer">Link 11</p>
+            </a>
+            <a href="#" className="text-gray-300 no-underline">
+              <p className="text-xs leading-4 my-2 cursor-pointer">Link 12</p>
+            </a>
+          </div>
+          <div className="w-36 mb-4 flex flex-col text-white">
+            <h4 className="text-sm leading-4 my-2 cursor-pointer">Coming Soon</h4>
+            <p className="text-xs leading-4 my-2 cursor-pointer">Content for 'Coming Soon' section</p>
+          </div>
+        </div>
+        <hr className="my-1" />
+        <div className="sb__footer-below flex justify-between flex-row mt-1">
+          <div className="sb__footer-copyright">
+            <p className="text-gray-300 text-xs">Copyright © 2023. All rights reserved</p>
+          </div>
+          <div className="sb__footer-below-links">
+            <a href="#" className="text-gray-300 no-underline">
+              <p className="text-xs">Privacy</p>
+            </a>
+            <a href="#" className="text-gray-300 no-underline">
+              <p className="text-xs">Terms & Conditions</p>
+            </a>
+            <a href="#" className="text-gray-300 no-underline">
+              <p className="text-xs">Security</p>
+            </a>
+            <a href="#" className="text-gray-300 no-underline">
+              <p className="text-xs">Cookie Declaration</p>
+            </a>
           </div>
         </div>
       </div>

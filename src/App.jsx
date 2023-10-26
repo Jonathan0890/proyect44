@@ -51,7 +51,7 @@ function App() {
 
     return (<>
         <div className='container'>
-            <h2>React Google Login</h2>
+            
             <br />
             <br />
             {profile ? (

@@ -1,12 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import Login from "../pages/Login";
+import Login from "../components/Login";
 import Sales from "../pages/Sales";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import Home from "../pages/Home";
 import Dashboard from "../components/Dashboard";
 import Formul from "../components/Formul";
-import Body from "../Body";
 import Nosotros from "../pages/Nosotros";
 import Registro from "../components/Registro";
 import Resena from "../pages/Resena";
@@ -43,10 +42,6 @@ export const routes = createBrowserRouter([
     {
         path: '/formul',
         element: <Formul/>
-    },
-    {
-        path:'/body',
-        element: <Body/>
     },
     {
         path:'/nosotros',

@@ -1,6 +1,4 @@
-import './../css/Formulario.css';
 import React from "react";
-import { useState, useEffect } from 'react';
 import axios from "axios";
 import { Formik } from "formik";
 
