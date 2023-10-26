@@ -35,18 +35,18 @@ export default function Dashboard() {
     return (
         <div className="grid lg:grid-cols-4 xl:grid-cols-6 min-h-screen">
             <Sidebar />
-            <main className="lg:col-span-3 xl:col-span-5 bg-gray-100 p-8 h-screen overflow-y-scroll">
+            <main className="lg:col-span-3 xl:col-span-5 bg-purple-300 p-8 h-screen overflow-y-scroll">
                 <br />
                 <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
                     {/* Contenido de la sección */}
                 </section>
                 <Formul />
                 <div className="p-4 sm:ml-50">
-                    <div className="p-20 border-dashed">
+                    <div className="p-30 border-dashed">
                         <div className="flex items-center justify-center h-48 mb-4 rounded">
                             <div className="container">
                                 <div className="relative left-70 top-24">
-                                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                    <table className="w-full text-sm text-left text-dark-300 dark:text-gray-700">
                                         <thead className="text-xs text-gray-900 uppercase dark:bg-gray-700 dark:text-gray-400">
                                             <tr>
                                                 <th scope="col" className="px-6 py-3">

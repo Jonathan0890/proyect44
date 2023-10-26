@@ -30,7 +30,7 @@ const Sidebar = () => {
                 </li>
                 <li className="mb-4">
                     <NavLink
-                        to="/formul"
+                        to="#h"
                         exact
                         className="text-dark rounded py-2 w-full d-inlineblock px-3"
                         activeClassName="active"
