@@ -4,8 +4,14 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { GoogleLogin } from '@react-oauth/google';
 
+
 function Login() {
-    
+    const responseMessage = (response) => {
+        console.log(response);
+    };
+    const errorMessage = (error) => {
+        console.log(error);
+    };
     const [user, setUser] = useState([]);
     const [profile, setProfile] = useState([]);
 
@@ -72,30 +78,27 @@ function Login() {
                         <Link to="/Registro" className="text-black">
                             ¿Has olvidado la contraseña?
                         </Link>
+
                         <Link to="/registro" className="text-black">
                             ¿No tienes una cuenta?
                         </Link>
                     </div>
-                    <div className="text-center">
-                        <GoogleLogin onSuccess={responseMessage} onError={errorMessage}/>
-                        <div className='container'>
-
-                            <br />
-                            <br />
-                            {profile ? (
-                                <div className='Perfil-google'>
-                                    <img src={profile.picture} alt="user image" />
-                                    <h3>User Logged in</h3>
-                                    <p>Name: {profile.name}</p>
-                                    <p>Email Address: {profile.email}</p>
-                                    <br />
-                                    <br />
-                                    <button onClick={logOut}>Log out</button>
-                                </div>
-                            ) : (
-                                <button className='button-google' onClick={() => login()}>Sign in with Google 🚀 </button>
-                            )}
-                        </div>
+                    <div>
+                        <h2> Google </h2>
+                        <br />
+                        <br />{profile ? (
+                            <div>
+                                <img src={profile.picture} alt="user image" />
+                                <h3>User Logged in</h3>
+                                <p>Name: {profile.name}</p>
+                                <p>Email Address: {profile.email}</p>
+                                <br />
+                                <br />
+                                <button onClick={logOut}>Log out</button>
+                            </div>
+                        ) : (
+                            <button onClick={() => login()}>Sign in with Google 🚀 </button>
+                        )}
                     </div>
                 </form>
             </div>

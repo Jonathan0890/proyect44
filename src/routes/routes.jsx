@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "../components/Login";
 import Sales from "../pages/Sales";
 import Sidebar from "../components/Sidebar";
@@ -12,6 +12,7 @@ import Resena from "../pages/Resena";
 import History from "../pages/History";
 import Favoritos from "../pages/Favoritos";
 import EditUser from "../pages/Pages-Dash/EditDash";
+
 
 
 export const routes = createBrowserRouter([
@@ -66,5 +67,9 @@ export const routes = createBrowserRouter([
     {
         path:'/EditDash/:id',
         element: <EditUser/>
+    },
+    {
+        path:"RoueterPro",
+        element: <RouterProvider/>
     }
 ]);

@@ -1,12 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { googleLogout, useGoogleLogin } from '@react-oauth/google';
-import axios from 'axios';
-import FacebookLogin from 'react-facebook-login';
-
+import React from 'react';
 
 function App() {
     
-
     return (<>
     
 

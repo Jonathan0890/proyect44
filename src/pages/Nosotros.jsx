@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
 
 const Nosotros = () => {
 
@@ -38,7 +39,8 @@ const Nosotros = () => {
     };
 
     return (
-        <div style={mainStyle}>
+        
+        <div style={mainStyle}><Navbar />
             <div>
                 <div style={containerStyle}>
                     <h1 style={titleStyle}>Sobre Nosotros</h1>
