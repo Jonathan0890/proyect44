@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import axios from 'axios';
-import Formul from '../components/Formul';
+import Formul from '../pages/Formul';
 
 export default function Dashboard() {
     const navigate = useNavigate();

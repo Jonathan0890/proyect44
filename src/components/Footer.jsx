@@ -6,15 +6,15 @@ function Footer() {
       <div className="sb__footer p-16">
         <div className="sb__footer-links flex justify-between items-start flex-row flex-wrap w-full text-left mb-8">
           <div className="w-36 mb-4 flex flex-col text-white">
-            <h4 className="text-sm leading-4 my-2 cursor-pointer">Employer</h4>
-            <a href="#" className="text-gray-300 no-underline">
-              <p className="text-xs leading-4 my-2 cursor-pointer">Link 1</p>
+            <h4 className="text-sm leading-4 my-2 cursor-pointer">Empleados</h4>
+            <a  className="text-gray-300 no-underline">
+              <p className="text-xs leading-4 my-2 cursor-pointer">Eduardo Gutierrez Pacheco</p>
             </a>
-            <a href="#" className="text-gray-300 no-underline">
-              <p className="text-xs leading-4 my-2 cursor-pointer">Link 2</p>
+            <a  className="text-gray-300 no-underline">
+              <p className="text-xs leading-4 my-2 cursor-pointer">Jonathan Rafael Coox Carrillo</p>
             </a>
-            <a href="#" className="text-gray-300 no-underline">
-              <p className="text-xs leading-4 my-2 cursor-pointer">Link 3</p>
+            <a  className="text-gray-300 no-underline">
+              <p className="text-xs leading-4 my-2 cursor-pointer">Alexis Alberto Zamora Gorospe</p>
             </a>
           </div>
           <div className="w-36 mb-4 flex flex-col text-white">
@@ -54,8 +54,8 @@ function Footer() {
             </a>
           </div>
           <div className="w-36 mb-4 flex flex-col text-white">
-            <h4 className="text-sm leading-4 my-2 cursor-pointer">Coming Soon</h4>
-            <p className="text-xs leading-4 my-2 cursor-pointer">Content for 'Coming Soon' section</p>
+            <h4 className="text-sm leading-4 my-2 cursor-pointer">MovieCan</h4>
+            <p className="text-xs leading-4 my-2 cursor-pointer">Cancun quintana roo 2023</p>
           </div>
         </div>
         <hr className="my-1" />
