@@ -3,9 +3,16 @@ import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { GoogleLogin } from '@react-oauth/google';
-
+import FacebookLogin from 'react-facebook-login';
+import GitHubLogin from 'github-login';
 
 function Login() {
+
+    const responseFacebook = (response) => {
+        console.log(response);
+    }
+    const onSuccess = response => console.log(response);
+    const onFailure = response => console.error(response);
     const responseMessage = (response) => {
         console.log(response);
     };
@@ -99,6 +106,22 @@ function Login() {
                         ) : (
                             <button onClick={() => login()}>Sign in with Google 🚀 </button>
                         )}
+                    </div>
+                    <div>
+                        <FacebookLogin
+                            appId="7191455840899456"
+                            autoLoad={false}
+                            fields="name,email,picture"
+                            callback={responseFacebook}
+                            textButton='INICIAR SESION CON FACEBOOK'
+                            icon='fa-facebook'
+                        />
+                    </div>
+                    <div>
+                        <GitHubLogin clientId="89424eaf1ba8e1dbc1bb"
+                            onSuccess={onSuccess}
+                            onFailure={onFailure}
+                        />
                     </div>
                 </form>
             </div>
